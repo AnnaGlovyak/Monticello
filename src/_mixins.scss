@@ -1,0 +1,20 @@
+@mixin caption {
+	font-size: $font-size-h2-title;
+	font-family: $font-family-gotham-bold;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 0 auto;
+	padding-bottom: 130px;
+	position: relative;
+	text-align: center;
+}
+
+@mixin caption-before {
+	content: '';
+	width: 100px;
+	border-bottom: 1px solid $color-dark-text;
+	position: absolute;
+	top: -35px;
+	left: 50%;
+	transform: translate(-50%, 0);
+}

@@ -1,0 +1,227 @@
+.what-we-do {
+    display: flex;
+    flex-direction: column;
+    max-height: 1633px;
+    margin-top: 142px;
+    color: $color-dark-text;
+
+    &__caption {
+        @include caption;
+    }
+    &__caption:before {
+        @include caption-before;
+    }
+    &__section {
+        height: 540px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 140px;
+    }
+    &__content {
+        max-width: 1170px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    &__content--right {
+        position: relative;
+    }
+
+    &__content--left {
+        position: relative;
+    }
+
+    &__content--right::before {
+        content: '';
+        position: absolute;
+        top: -70px;
+        left: -215px;
+        width: 586px;
+        height: 470px;
+        background-color: $color-what-we-do-content--right;
+        z-index: -2;
+    }
+
+    &__content--left::after {
+        content: '';
+        position: absolute;
+        bottom: 70px;
+        right: -215px;
+        width: 586px;
+        height: 470px;
+        background-color: $color-what-we-do-content--left;
+        z-index: -2;
+    }
+   
+    &__description {
+        max-width: 470px;
+        width: 100%;
+    }
+
+    &__title{
+        font-size: $font-size-h2-title;
+        font-family: $font-family-gotham-bold;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+        padding-top: 10px;
+    }
+
+    &__subtitle {
+        font-size: $font-size-h3-subtitle;
+        font-family: $font-family-gotham-book;
+        text-transform: uppercase;
+        margin-top: 55px;
+    }
+    &__paragraf{
+        font-family: $font-family-open-sans;
+        font-size: $font-size-paragraf;
+        line-height: 30px;
+        margin-bottom: 30px;
+    }
+
+    &__btn {
+        width: 190px;
+        margin-bottom: 55px;
+    }
+
+    &__location {
+        font-family: $font-family-open-sans;
+        font-style: italic;
+        font-size: $font-size-paragraf;
+    }
+}
+
+.fa-map-marker-alt {
+    color: $color-dark-text;
+    font-size: $font-size-icon-location;
+    padding-right: 10px;
+}
+
+@media screen and (max-width: 1600px) {
+
+    .what-we-do {
+
+        &__section {
+            padding-bottom: 40px;
+        }
+        
+        &__content {
+            max-width: 980px;    
+        }
+
+        &__content--right::before, &__content--left::after {
+            display: none;
+        }
+        
+        &__image {
+            max-width: 520px;
+            width: 100%;
+            height: fit-content;
+        }
+       
+        &__description {
+            width: 450px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .what-we-do {
+
+        &__content {
+            max-width: 700px;    
+        }
+        
+        &__image {
+            width: 230px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 980px) {
+
+    .what-we-do {
+
+        max-height: 1000px;
+        margin-top: 60px;
+    
+        &__caption {
+            padding-bottom: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    .what-we-do {
+
+        max-height: 1800px;
+        height: 100%;
+        margin-top: 60px;
+
+        &__content {
+            max-width: 540px; 
+            flex-direction: column;   
+        }
+        &__content--left {
+            flex-direction: column-reverse;   
+        }
+        
+        &__image {
+            width: 500px;
+        }
+    
+        &__caption {
+            padding-bottom: 50px;
+        }
+
+        &__section {
+            height: 900px;
+        } 
+
+        &__description {
+            margin-bottom: 30px;
+        }
+
+        &__subtitle {
+            margin-top: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .what-we-do {
+
+        &__content {
+            max-width: 300px; 
+            flex-direction: column;   
+        }
+        
+        &__image {
+            width: 300px;
+        }
+
+        &__section {
+            height: 720px;
+            padding-bottom: 10px;
+        } 
+
+        &__description {
+            width: 300px;
+            margin-bottom: 30px;
+        }
+
+        &__btn {
+            width: 300px;
+        }
+    }
+    
+}

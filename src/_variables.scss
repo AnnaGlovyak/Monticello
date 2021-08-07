@@ -1,0 +1,50 @@
+$font-family-gotham-book: 'GothamBook';
+$font-family-gotham-bold: 'gothambold1';
+$font-family-open-sans: 'Open Sans', sans-serif;
+
+
+$font-size-h1: 80px;
+$font-size-h2-title: 44px;
+$font-size-h3-subtitle: 22px;
+$font-size-paragraf: 18px;
+$font-size-btn: 14px;
+$font-size-icon-location: 16px;
+$font-size-h1-header-title: 80px;
+
+
+$color-dark-text: #2c4058;
+$color-grey-text: #4b5562;
+$color-what-we-do-content--right: #55b7ff;
+$color-what-we-do-content--left: #7e5aff;
+$color-title-white: #fff;
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: $font-family-gotham-book;
+	font-size: $font-size-btn;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $color-dark-text;
+	width: 140px;
+	height: 50px;
+	border: 1px solid $color-dark-text;
+	text-align: center;
+	cursor: pointer;
+	transition-property: color, border, background-color;
+	transition-duration: 0.7s;
+
+}
+.btn:hover {
+	
+	color: $color-title-white;
+	background-color: $color-dark-text;
+
+}
+
+@media screen and (max-width: 540px) {
+	.btn {
+		width: 100%;
+	}
+}

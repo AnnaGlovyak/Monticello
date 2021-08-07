@@ -1,0 +1,278 @@
+.about-us {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    &__header {
+    position: absolute; //fixed
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    }
+}
+
+.header {
+    max-width: 1170px;
+    width: 100%;
+    height: 155px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+
+    &__logo {
+        width: 242px;
+    }
+
+    &__arrow-down {
+        font-size: 14px;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid white;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+
+    &__arrow-down .fas {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: block;
+        font-size: 10px;
+        z-index: 3;
+    }
+}
+
+.navigation {
+    max-width: 570px;
+    width: 100%;
+    padding-left: 24px;
+
+    &__list { 
+        display: flex;
+        justify-content: space-between;  
+    }
+
+    &__link {
+        font-size: $font-size-btn;
+        font-family: $font-family-gotham-book;
+        text-transform: uppercase;
+        color: $color-title-white;
+        text-decoration: none;
+        position: relative;
+    }
+    &__link::before {
+        content: '';
+        display: flex;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        color: transparent;
+        border: 1px solid $color-title-white;
+        position: absolute;
+        top: 50%;
+        left: -23px;
+        transform: translate(0, -50%);
+        transition-property: color, background-color;
+	    transition-duration: 0.5s;
+    }
+
+    &__link:hover::before {
+        color: white;
+        background-color: white;
+        opacity: 1;
+        font-size: 10px;
+    }
+
+    &__link--active::before {
+        color: white;
+        background-color: white;
+        width: 10px;
+        height: 10px;
+        opacity: 1;
+        font-size: 10px;
+    }
+}
+
+.slider {
+
+    &__item--first {
+        background: bottom / cover no-repeat url(img/tu-tram-pham-202263-transparent.png), linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(85,183,255,1) 0%, rgba(126,90,255,1) 100%);
+        height: 100vh;
+    }
+
+    &__item--second {
+        background: bottom / cover no-repeat url(img/city2@2x.png), linear-gradient(45deg, rgba(2,0,36,1) 0%, rgba(60,127,212,1) 0%, rgba(36,204,250,1) 100%);
+        height: 100vh;
+    }
+
+    &__item--third {
+        background: bottom / cover no-repeat url(img/city2@2x.png), linear-gradient(45deg, rgba(60,127,212,1) 0%, rgb(216, 214, 255) 0%, rgba(36,204,250,1) 100%);
+        height: 100vh;
+    }
+
+    &__title {
+        @include caption;
+        font-size: $font-size-h1-header-title;
+        color: $color-title-white;
+        letter-spacing: 4px;
+        padding-bottom: 28px;
+        padding-top: 35px;
+        padding-left: 5px;
+    }
+
+    &__subtitle {
+        font-size: $font-size-paragraf;
+        font-family: $font-family-gotham-book;
+        text-transform: uppercase;
+        color: $color-title-white;
+        letter-spacing: 5.5px;
+        padding-left: 5px;
+    }
+
+    &__dots {
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 20px;
+        height: 204px;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}
+
+.slider .slick-dots {
+    right: 40px;
+    padding: 0 20px;
+}
+
+
+.about-us .slick-initialized .slick-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 160px;
+
+    &__item {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(216, 214, 255, 0.4);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    &__item:hover{
+        opacity: 0.5;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+
+    .header {
+        max-width: 980px;
+    }
+    .navigation {
+        max-width: 400px;
+    }
+
+}
+
+@media screen and (max-width: 1200px) {
+    .header {
+        max-width: 720px;
+        
+        &__logo {
+
+        width: 150px;
+        }
+    }
+
+    .social {
+
+        width: 100px;
+
+        &__item {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    
+    .slider {
+    
+        &__title {
+            font-size: $font-size-h2-title;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    
+    .about-us .social {
+        display: none;
+    }
+
+    .about-us .header {
+        justify-content: space-between;
+        height: 70px;
+
+        &__arrow-down {
+            display: none;
+        }
+
+        &__logo {
+            padding-left: 10px;
+        }
+    }
+
+    .navigation {
+        display: none;
+    }
+    
+    .slider {
+    
+        &__title {
+            font-size: $font-size-h2-title;
+            color: $color-title-white;
+            text-align: center;
+        }
+    
+        &__subtitle {
+            font-size: $font-size-btn;
+            text-align: center;
+        }
+
+        &__dots {
+            display: none !important;
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+
+    .slider {
+    
+        &__title, &__subtitle {
+            padding: 10px 20px;
+        }
+    }
+}
+

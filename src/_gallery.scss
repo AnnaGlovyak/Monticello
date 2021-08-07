@@ -1,0 +1,132 @@
+.gallery {
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__caption {  
+        @include caption;
+        padding-bottom: 92px;
+    }
+
+    &__caption:before {
+        @include caption-before;
+    }
+
+    &__content {
+        max-width: 1170px;
+        width: 100%;
+        max-height: 440px;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-auto-rows: 214px;
+        grid-gap: 10px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    &__item {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;  
+    }
+
+    &__item--big {
+        grid-row-start: 1;
+        grid-row-end: 3;   
+    }
+    &__content::before {
+        content: '';
+        background: url("img/360.png");
+        display: block;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        top: 50%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__btn {
+        margin-top: 57px;
+        width: 190px;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+
+    .gallery {
+
+        &__content {
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-auto-rows: auto;
+        } 
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    .gallery {
+        height: 1300px;
+        
+        &__content {
+            max-width: 560px;
+            width: 100%;
+            max-height: 900px;
+            height: 100%;
+            grid-template-columns: 1fr 1fr;
+            grid-auto-rows: 214px;
+        }
+
+        &__content::before {
+            content: '';
+            background: url("img/360.png");
+            display: block;
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &__item--big {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            grid-row-start: 1;
+            grid-row-end: 3;   
+        } 
+    }
+}
+
+@media screen and (max-width: 540px) {
+
+    .gallery {
+        height: 1900px;
+        
+        &__content {
+            max-width: 320px;
+            width: 100%;
+            max-height: 1500px;
+            height: 100%;
+            grid-template-columns: 1fr;
+            grid-auto-rows: auto;
+        }
+
+        &__item--big {
+            grid-column-start: 1;
+            grid-column-end: 1;
+            grid-row-start: 1;
+            grid-row-end: 2;   
+        }
+        &__btn {
+            width: 300px;
+        }
+        &__content::before {
+            display: none;
+        }
+    }
+}
